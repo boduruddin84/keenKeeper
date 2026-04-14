@@ -6,7 +6,7 @@ const MyNavLink = ({ to, children }) => {
     <NavLink 
         to={to}
       className={({ isActive }) =>
-        `flex justify-center items-center gap-1 font-semibold py-2 px-4 rounded-sm ${isActive ? "bg-[#244D3F] text-white" : ""}`
+        `flex justify-center items-center gap-1 font-semibold py-2 px-4 rounded-sm w-1/3 md:w-full ${isActive ? "bg-[#244D3F] text-white" : ""}`
       }
     >
       {children}
