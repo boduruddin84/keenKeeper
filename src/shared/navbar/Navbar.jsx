@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className="bg-base-100 shadow-sm ">
       <div className="container mx-auto">
-        <div className="ml-20 md:ml-0 md:flex md:flex-wrap justify-between  py-5">
+        <div className="ml-30 md:ml-0 md:flex md:flex-wrap justify-between  py-5">
           <img className="mb-3 md:mb-0" src={LogoImg} alt="" />
           <ul className="md:flex gap-5 flex-wrap">
             <li>

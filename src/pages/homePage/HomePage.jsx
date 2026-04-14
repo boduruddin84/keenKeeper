@@ -1,9 +1,13 @@
 import React from 'react'
 import AddFriend from '../../homepage/AddFriend'
+import YourFriends from '../../homepage/YourFriends'
 
 const HomePage = () => {
   return (
-    <AddFriend />
+    <div>
+        <AddFriend />
+        <YourFriends />
+    </div>
   )
 }
 
