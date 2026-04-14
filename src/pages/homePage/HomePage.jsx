@@ -1,8 +1,9 @@
 import React from 'react'
+import AddFriend from '../../homepage/AddFriend'
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <AddFriend />
   )
 }
 
