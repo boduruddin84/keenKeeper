@@ -1,9 +1,10 @@
 import React from "react";
 import LogoImg from "../../assets/images/logo.png"
-import { NavLink } from "react-router";
 import { IoHomeOutline } from "react-icons/io5";
 import { CiClock2 } from "react-icons/ci";
 import { ImStatsDots } from "react-icons/im";
+import MyNavLink from "./MyNavLink";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
   return (
@@ -11,9 +12,21 @@ const Navbar = () => {
       <div className="flex justify-between container mx-auto py-5">
         <img src={LogoImg} alt="" />
         <ul className="flex gap-5">
-            <li className="flex justify-center items-center gap-1"><IoHomeOutline /><NavLink> Home</NavLink></li>
-            <li className="flex justify-center items-center gap-1"><CiClock2 /><NavLink>Timeline</NavLink></li>
-            <li className="flex justify-center items-center gap-1"><ImStatsDots /><NavLink>Stats</NavLink></li>
+            <li>
+                <MyNavLink to={"/"}>
+                    <IoHomeOutline /> Home
+                </MyNavLink>
+            </li>
+            <li>
+                <MyNavLink to={"/timeline"}>
+                    <CiClock2 /> Timeline
+                </MyNavLink>
+            </li>
+            <li>
+                <MyNavLink to={"/stats"}>
+                    <ImStatsDots /> Stats
+                </MyNavLink>
+            </li>
         </ul>
       </div>
     </nav>
