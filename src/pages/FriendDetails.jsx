@@ -2,7 +2,6 @@ import React from 'react'
 import { useParams } from 'react-router'
 import useFriends from '../hooks/useFriends';
 import { HashLoader } from 'react-spinners';
-import { HiH2 } from 'react-icons/hi2';
 import FriendDetailsCard from '../components/ui/FriendDetailsCard';
 
 
