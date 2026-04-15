@@ -41,7 +41,7 @@ const AddFriend = () => {
           </div>
         </div>
       </div>
-      <hr className="w-6xl mx-auto mt-10 text-[#E9E9E9]" />
+      <hr className="lg:w-6xl mx-auto mt-10 text-[#E9E9E9]" />
     </div>
   );
 };
