@@ -1,6 +1,9 @@
 import React from "react";
 import { HiOutlineBellSnooze } from "react-icons/hi2";
 import { RiArchiveLine, RiDeleteBinLine } from "react-icons/ri";
+import CallImg from "../../assets/images/call.png";
+import TextImg from "../../assets/images/text.png";
+import VideoImg from "../../assets/images/video.png";
 
 const FriendDetailsCard = ({ expectedFriend }) => {
   const statusStyles = {
@@ -11,10 +14,10 @@ const FriendDetailsCard = ({ expectedFriend }) => {
 
   return (
     <div className="bg-[#F8FAFC]">
-      <div className="w-6xl mx-auto py-5">
-        <div className="w-[30%]">
-          <div className="card bg-[#FFFFFF] w-70 shadow-sm ">
-            <figure className="px-10 pt-10">
+      <div className="lg:flex lg:w-6xl mx-auto py-5">
+        <div className="w-[90%] mx-auto lg:w-[30%]">
+          <div className="card bg-[#FFFFFF] w-80 shadow-sm ">
+            <figure className=" pt-5">
               <img src={expectedFriend.picture} className="rounded-full" />
             </figure>
             <div className="card-body items-center text-center">
@@ -44,18 +47,57 @@ const FriendDetailsCard = ({ expectedFriend }) => {
               <div className="card-actions"></div>
             </div>
           </div>
-          <div className="card bg-[#FFFFFF] w-70 shadow-sm my-2 py-3 text-center">
+          <div className="card bg-[#FFFFFF] w-80 shadow-sm my-2 py-3 text-center">
             <p className="flex justify-center items-center gap-2 text-[16px] font-medium text-[#1F2937]"><HiOutlineBellSnooze /> Snooze 2 weeks</p>
           </div>
-          <div className="card bg-[#FFFFFF] w-70 shadow-sm my-2 py-3 text-center">
+          <div className="card bg-[#FFFFFF] w-80 shadow-sm my-2 py-3 text-center">
             <p className="flex justify-center items-center gap-2 text-[16px] font-medium text-[#1F2937]"><RiArchiveLine /> Archive</p>
           </div>
-          <div className="card bg-[#FFFFFF] w-70 shadow-sm my-2 py-3 text-center">
+          <div className="card bg-[#FFFFFF] w-80 shadow-sm my-2 py-3 text-center">
             <p className="flex justify-center items-center gap-2 text-[16px] font-medium text-[#EF4444]"><RiDeleteBinLine /> Delete</p>
           </div>
         </div>
-        <div className="w-[70%]">
-
+        <div className="w-[90%] mx-auto lg:w-[70%]">
+            <div className="lg:flex lg:gap-5">
+                <div className="card bg-[#FFFFFF] w-70 shadow-sm my-2 py-3 text-center pt-10 pb-5 space-y-2">
+                    <h3 className="text-3xl font-semibold text-[#244D3F]">{expectedFriend.days_since_contact}</h3>
+                    <p className="text-[18px] text-[#64748B]">Days Since Contact</p>
+                </div>
+                <div className="card bg-[#FFFFFF] w-70 shadow-sm my-2 py-3 text-center pt-10 pb-5 space-y-2">
+                    <h3 className="text-3xl font-semibold text-[#244D3F]">{expectedFriend.goal}</h3>
+                    <p className="text-[18px] text-[#64748B]">Goal (Days)</p>
+                </div>
+                <div className="card bg-[#FFFFFF] w-70 shadow-sm my-2 py-3 text-center pt-10 pb-5 space-y-2">
+                    <h3 className="text-3xl font-semibold text-[#244D3F]">{expectedFriend.next_due_date}</h3>
+                    <p className="text-[18px] text-[#64748B]">Next Due</p>
+                </div>
+            </div>
+            <div className="card bg-[#FFFFFF] w-full shadow-sm my-2 text-center pt-10 pb-5">
+                <div className="flex justify-between px-5">
+                    <h4 className="text-[20px] text-[#244D3F] font-medium">Relationship Goal</h4>
+                    <button className="btn text-[14px] text-[#1F2937]">Edit</button>
+                </div>
+                <p className="text-left px-5 text-[18px] text-[#64748B]">
+                    Connect every <span className="text-[18px] text-[#1F2937] font-bold">{expectedFriend.days_since_contact} days</span>
+                </p>
+            </div>
+            <div className="card bg-[#FFFFFF] w-full shadow-sm my-2 pl-5 pt-10 pb-5 mt-5">
+                <h4 className="text-[20px] text-[#244D3F] font-medium">Relationship Goal</h4>
+                <div className="lg:flex gap-5">
+                    <button className="btn flex-col mt-3 py-15 px-25">
+                        <img className="w-10 h-10" src={CallImg} alt="Call button" />
+                        <p className="mt-2 text-[18px] text-[#1F2937]">Call</p>
+                    </button>
+                    <button className="btn flex-col mt-3 py-15 px-25">
+                        <img className="w-10 h-10" src={TextImg} alt="Text button" />
+                        <p className="mt-2 text-[18px] text-[#1F2937]">Text</p>
+                    </button>
+                    <button className="btn flex-col mt-3 py-15 px-25">
+                        <img className="w-10 h-10" src={VideoImg} alt="Video button" />
+                        <p className="mt-2 text-[18px] text-[#1F2937]">Video</p>
+                    </button>
+                </div>
+            </div>
         </div>
       </div>
     </div>
