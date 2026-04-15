@@ -8,8 +8,7 @@ import TwitterImg from "../../assets/images/twitter.png"
 const Footer = () => {
   return (
     <div className='bg-[#244D3F] pb-5'>
-      <div className='lg
-      ;w-6xl mx-auto'>
+      <div className='lg:w-6xl mx-auto'>
         <div className='text-center space-y-5 mb-10'>
           <h3 className='text-2xl lg:text-5xl font-extrabold text-[#FFFFFF] pt-15'>KeenKeeper</h3>
           <p className='text-[16px] text-[#ffffffa8]'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
