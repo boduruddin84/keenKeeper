@@ -1,21 +1,11 @@
-import React, { useEffect, useState } from "react";
 import FriendsCard from "../components/ui/FriendsCard";
 import { HashLoader } from "react-spinners";
+import useFriends from "../hooks/useFriends";
 
 const YourFriends = () => {
-  const [friends, setFriends] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchFriendsData = async () => {
-      const res = await fetch("/data.json");
-      const friendsDetailsData = await res.json();
-      setFriends(friendsDetailsData);
-      setLoading(false);
-    };
-    fetchFriendsData();
-  }, []);
-
+  
+  const { friends, loading } = useFriends();
+  
 
   return (
     <div className="bg-[#F8FAFC] pb-10">
