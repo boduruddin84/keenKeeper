@@ -1,16 +1,42 @@
-import React from "react";
+
 import { HiOutlineBellSnooze } from "react-icons/hi2";
 import { RiArchiveLine, RiDeleteBinLine } from "react-icons/ri";
 import CallImg from "../../assets/images/call.png";
 import TextImg from "../../assets/images/text.png";
 import VideoImg from "../../assets/images/video.png";
+import { useContext } from "react";
+import { ClickedFriendContext } from "../../context/ClickedFriendContext";
+import { toast } from "react-toastify";
+
+
 
 const FriendDetailsCard = ({ expectedFriend }) => {
+
+  const {clickedFriend, setClickedFriend,} = useContext(ClickedFriendContext);
+
   const statusStyles = {
-    overdue: "bg-[#EF4444] text-[#FFFFFF] ",
+    "overdue": "bg-[#EF4444] text-[#FFFFFF] ",
     "almost due": "bg-[#EFAD44] text-[#FFFFFF] ",
     "on-track": "bg-[#244D3F] text-[#FFFFFF]",
   };
+
+
+
+const handleCall = () => {
+  setClickedFriend([...clickedFriend, expectedFriend])
+  toast.success(`Call With ${expectedFriend.name}`);
+}
+const handleText = () => {
+  setClickedFriend([...clickedFriend, expectedFriend])
+  toast.success(`Text With ${expectedFriend.name}`);
+}
+const handleVideo = () => {
+  setClickedFriend([...clickedFriend, expectedFriend])
+  toast.success(`Video With ${expectedFriend.name}`);
+}
+
+
+
 
   return (
     <div className="bg-[#F8FAFC]">
@@ -84,15 +110,15 @@ const FriendDetailsCard = ({ expectedFriend }) => {
             <div className="card bg-[#FFFFFF] w-full shadow-sm my-2 pl-5 pt-10 pb-5 mt-5">
                 <h4 className="text-[20px] text-[#244D3F] font-medium">Relationship Goal</h4>
                 <div className="lg:flex gap-5">
-                    <button className="btn flex-col mt-3 py-15 px-25">
+                    <button onClick={handleCall} className="btn flex-col mt-3 py-15 px-25">
                         <img className="w-10 h-10" src={CallImg} alt="Call button" />
                         <p className="mt-2 text-[18px] text-[#1F2937]">Call</p>
                     </button>
-                    <button className="btn flex-col mt-3 py-15 px-25">
+                    <button onClick={handleText} className="btn flex-col mt-3 py-15 px-25">
                         <img className="w-10 h-10" src={TextImg} alt="Text button" />
                         <p className="mt-2 text-[18px] text-[#1F2937]">Text</p>
                     </button>
-                    <button className="btn flex-col mt-3 py-15 px-25">
+                    <button onClick={() => handleVideo()} className="btn flex-col mt-3 py-15 px-25">
                         <img className="w-10 h-10" src={VideoImg} alt="Video button" />
                         <p className="mt-2 text-[18px] text-[#1F2937]">Video</p>
                     </button>

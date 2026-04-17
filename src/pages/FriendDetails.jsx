@@ -12,7 +12,7 @@ const FriendDetails = () => {
  
   const { friends, loading } = useFriends();
 
-  const expectedFriend = friends.find(friend => String(friend.id) === id );
+  const expectedFriend = friends?.find(friend => String(friend.id) === id );
   
   
   return (
