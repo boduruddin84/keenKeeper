@@ -1,15 +1,31 @@
-import React from 'react'
-import CallImg from "../../assets/images/call.png"
+import React from "react";
+import { IoCall } from "react-icons/io5";
+import { IoMdText } from "react-icons/io";
+import { ImVideoCamera } from "react-icons/im";
 
-const TimelineCard = ({clicked}) => {
+const TimelineCard = ({ clicked }) => {
+
+  const iconMap = {
+    Call: <IoCall size="3em" />,
+    Text: <IoMdText size="3em" />,
+    Video: <ImVideoCamera size="3em" />,
+  };
+
   return (
     <div>
-        <div className='flex gap-4 bg-white shadow-sm px-5 py-10 rounded-sm mb-5'>
-            <img className='w-10' src={CallImg} alt="Call image" />
-            <p className='text-[18px] text-[#64748B]'><span className='text-[20px] font-medium text-[#244D3F]'>Call</span> with {clicked.name}</p>
+      <div className="flex gap-4 bg-white shadow-sm px-5 py-10 rounded-sm mb-5">
+        
+          {iconMap[clicked.type]}
+        
+        <div>
+          <p className="text-[18px] text-[#64748B]">
+            {clicked.title}
+          </p>
+          <p>{clicked.date}</p>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default TimelineCard
+export default TimelineCard;

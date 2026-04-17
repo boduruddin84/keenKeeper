@@ -23,15 +23,39 @@ const FriendDetailsCard = ({ expectedFriend }) => {
 
 
 const handleCall = () => {
-  setClickedFriend([...clickedFriend, expectedFriend])
+
+  const newEntry = {
+    id: Date.now(),
+    type: "Call",
+    title: `Call with ${expectedFriend.name}`,
+    date: new Date().toLocaleDateString()
+  };
+
+  setClickedFriend([...clickedFriend, newEntry])
   toast.success(`Call With ${expectedFriend.name}`);
 }
 const handleText = () => {
-  setClickedFriend([...clickedFriend, expectedFriend])
+
+  const newEntry = {
+    id: Date.now(),
+    type: "Text",
+    title: `Text with ${expectedFriend.name}`,
+    date: new Date().toLocaleDateString()
+  };
+
+  setClickedFriend([...clickedFriend, newEntry])
   toast.success(`Text With ${expectedFriend.name}`);
 }
 const handleVideo = () => {
-  setClickedFriend([...clickedFriend, expectedFriend])
+
+  const newEntry = {
+    id: Date.now(),
+    type: "Video",
+    title: `Video with ${expectedFriend.name}`,
+    date: new Date().toLocaleDateString()
+  };
+
+  setClickedFriend([...clickedFriend, newEntry])
   toast.success(`Video With ${expectedFriend.name}`);
 }
 
