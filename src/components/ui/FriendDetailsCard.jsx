@@ -142,7 +142,7 @@ const handleVideo = () => {
                         <img className="w-10 h-10" src={TextImg} alt="Text button" />
                         <p className="mt-2 text-[18px] text-[#1F2937]">Text</p>
                     </button>
-                    <button onClick={() => handleVideo()} className="btn flex-col mt-3 py-15 px-25">
+                    <button onClick={handleVideo} className="btn flex-col mt-3 py-15 px-25">
                         <img className="w-10 h-10" src={VideoImg} alt="Video button" />
                         <p className="mt-2 text-[18px] text-[#1F2937]">Video</p>
                     </button>
